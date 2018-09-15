@@ -1,1 +1,3 @@
 # chemistry_scripts
+
+an assortment of random scripts that do chemical things...

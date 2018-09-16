@@ -18,6 +18,7 @@ while not elements == 'DONE':
     elemlist = elements.split()
 
     weightSum = 0
+    weightDict = {}
     for elem in elemlist:
         elemSymb = ""
         while len(elem) > 0 and ord(elem[0]) >= 65:
@@ -34,8 +35,12 @@ while not elements == 'DONE':
                 elembox = item
         weight=elembox.findNext('i').text
         print("atomic weight: "+elembox.text+":"+weight)
+        weightDict[elemSymb] = float(weight)*int(numString)
         weightSum += float(weight)*int(numString)
     print(weightSum)
+    percentMassVal = input("percent mass? if yes, type element symbol. if no, type NO")
+    if not percentMassVal == 'NO':
+        print ("percent mass:"+str((weightDict[percentMassVal]/weightSum)*100))
     elements = input("input compound?")
 
 

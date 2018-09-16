@@ -27,7 +27,11 @@ while not elements == 'DONE':
             numString = "1"
         else:
             numString = elem
-        elembox = soup.find('acronym', text=elemSymb)
+        elemboxList = soup.findAll('acronym', text=elemSymb)
+        elembox = None
+        for item in elemboxList:
+            if item.parent.name == 'big':
+                elembox = item
         weight=elembox.findNext('i').text
         print("atomic weight: "+elembox.text+":"+weight)
         weightSum += float(weight)*int(numString)

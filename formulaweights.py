@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup as bs
 import requests
 
-#requisites: install bs4, requests packages
+#requisites: install "bs4", "requests" packages
 # a script that finds the formula weight in amu ( or equivalently molar mass in g/mol)
 
 ptable = requests.get('https://ptable.com/')
